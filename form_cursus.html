@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>formulaire cursus</title>
+    </head>
+    <body>
+	
+	
+<script type="text/javascript">
+function ajouteLigne ()
+{
+clone = document.getElementById("a_cloner").cloneNode(true);
+document.getElementById("tab").appendChild (clone);
+}
+</script>
+
+
+		<form method="get" name="form" id="form" action="cursus_action.php">
+			<div id="tab"> 
+				<label for="id">Numéro d'étudiant</label> <input
+                   name="id"  type="text"/>  <br/> <br/>
+				<fieldset id="a_cloner">
+					<h3> Ajouter un nouvel élement de formation</h3>
+						
+						
+						En quel semestre avez-vous effectué cette UE ?
+						<select name="sem_seq">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+						</select>	<br/> <br/>
+					
+					
+						<label for="label">Label du semestre</label> <input
+							name="label" placeholder="ex: ISI1" type="text"/>  <br/> <br/>
+						<label for="sigle">Sigle de L'UE</label> <input
+							name="sigle" placeholder="ex: LO07" type="text"/>  <br/> <br/>
+						Catégorie 
+						<select name="categorie">
+							  <option value="CS">CS</option>
+							  <option value="TM">TM</option>
+							  <option value="NPML">NPML</option>
+							  <option value="ME">ME</option>
+							  <option value="CT">CT</option>
+							  <option value="HP">Hors-profil</option>
+							   <option value="SE">SE</option>
+							  <option value="TX">TX</option>
+							  <option value="ER">ER</option>
+							  <option value="EC">EC</option>	  
+							  <option value="ATDOC">ATDOC</option>
+						</select>	<br/> <br/>
+						
+						UE suivie pendant
+						<select name="affectation">
+							  <option value="TC">TC</option>
+							  <option value="BR">BR</option>
+							  <option value="TCBR">TCBR</option>
+							  <option value="FCBR">FCBR</option>
+							  <option value="UTT">UTT</option>
+						</select>	<br/> <br/>
+						
+						UE suivie à l'UTT ?
+						<select name="utt">
+							  <option value="y">oui</option>
+							  <option value="n">non</option>
+						</select>	<br/> <br/>
+					
+						L'UE appartient au profil (TC, branche ou filière) ?
+						<select name="profil">
+							  <option value="y">oui</option>
+							  <option value="n">non</option>
+						</select>	<br/> <br/>
+						
+						<label for="credit">Crédits attribués</label> <input
+							  name="credit"  type="text"/>  <br/> <br/>
+							  
+						Résultat
+						<select name="resultat">
+							  <option value="A">A</option>
+							  <option value="B">B</option>
+							  <option value="C">C</option>
+							  <option value="D">D</option>
+							  <option value="E">E</option>
+							  <option value="F">F</option>
+							  <option value="FX">FX</option>
+							  <option value="ADM">ADM</option>
+							  <option value="ABS">ABS</option>
+							  <option value="RES">RES</option>
+							  <option value="EQU">EQU</option>
+						</select>	<br/> <br/> 
+				  
+				</fieldset>  
+            </div><br/> <br/> 
+			
+			<a href="#" onclick="ajouteLigne();">Ajouter une UE suivie ou un élement de formation</a>   <br/>
+                
+						<input placeholder="valider" type="submit"/><br/>
+						<input type ="reset" value="annuler"/>
+		</form>
+		
+       
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>formulaire etu</title>
+    </head>
+    <body>
+	
+		<h1> Ajouter un nouveau profil d'étudiant</h1>
+		<fieldset>
+			<form method="get" name="form" action=".php">
+                
+				
+                <label for="id">Numéro d'étudiant</label> <input
+                      name="id"  type="text"/>  <br/> <br/>
+                <label for="nom">Nom</label> <input 
+                      name="nom" type="text"/>   <br/><br/>
+				<label for="prenom">Prénom</label> <input 
+                      name="prenom" type="text"/>    <br/><br/>
+				Admis en  
+				<input name="ad" type="radio" value ="TC"/>Tronc Commun 
+				<input name="ad" type="radio" value="BR"/>Branche <br/><br/>
+				Filière 
+				<select name="fi">
+					  <option value="MSI">MSI</option>
+                      <option value="MPL">MPL</option>
+					  <option value="MRI">MRI</option>
+                </select>	<br/> <br/>
+				   
+                
+                <input placeholder="valider" type="submit"/><br/>
+                <input type ="reset" value="annuler"/>
+			</form>
+		</fieldset>
+       
+    </body>
+</html>
