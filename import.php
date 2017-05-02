@@ -45,36 +45,22 @@ error_reporting(E_ALL);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <?php
+        
+       
         $databasehost = "localhost";
         $databasename = "projet_lo07";
         $databasetable = "cursus";
         $databaseusername = "caocheng";
         $databasepassword = 123;
-        $csvfile = "/Applications/XAMPP/xamppfiles/htdocs/projet_lo07/projet/PRIOR_beatrice.csv";
+        $csvfile = $_FILES["userfile_csv"]["name"];
 
-        // Vérifier l'existence du fichier csv
+        // check the exitance of the CSV file
+        if (!file_exists($csvfile)) {
             die("File not found. Make sure you specified the correct path.");
         }
 
-        // connexion  la base de données
+        // connect to the base donnees
         $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -82,14 +68,14 @@ error_reporting(E_ALL);
             echo "Connected successfully<br>";
         }
 
-        // écrire SQL 
-        $sql = "LOAD DATA INFILE '$csvfile'  
+        // write the SQL 
+        $sql = "LOAD DATA LOCAL INFILE '$csvfile'  
                 INTO TABLE cursus 
                 FIELDS TERMINATED BY ';' 
                 LINES TERMINATED BY '\r\n'
                 IGNORE 6 LINES";
 
-        // excuter le SQL 
+        // excuter the SQL 
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
