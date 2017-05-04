@@ -66,8 +66,6 @@ error_reporting(E_ALL);
         $databasehost = "localhost";
         $databasename = "projet_lo07";
         $databasetable = "cursus";
-        $databaseusername = "caocheng";
-        $databasepassword = 123;
         $csvfile = "/Applications/XAMPP/xamppfiles/htdocs/projet_lo07/projet/PRIOR_beatrice.csv";
 
         // Vérifier l'existence du fichier csv
@@ -75,7 +73,7 @@ error_reporting(E_ALL);
         }
 
         // connexion  la base de données
-        $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
+        $conn = new mysqli($databasehost, $databasename);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } else {

@@ -13,14 +13,7 @@ error_reporting(E_ALL);
     </head>
     <body>
  <?php
-	define ('USER', 'caocheng');
-	define ('PASSWORD', 'Hbm4h9VQ');
-	define ('HOST', 'dev-isi.utt.fr')
-	define ('DB_NAME', 'caocheng');
 	
-	$base = mysqli_connect (HOST, USER, PASSWORD, DB_NAME) 
-	or die ('impossible de se connecter :' + mysqli_connect_error());
-	echo " conection ca marche";
 	
 ?> 
      
