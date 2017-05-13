@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 04, 2017 at 06:05 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: May 13, 2017 at 03:06 PM
+-- Server version: 5.7.18-0ubuntu0.16.04.1
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `projet_lo07`
 --
-CREATE DATABASE IF NOT EXISTS `projet_lo07` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `projet_lo07`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,7 @@ USE `projet_lo07`;
 --
 
 CREATE TABLE `cursus` (
-  `label` varchar(10) NOT NULL,
+  `label` int(10) NOT NULL,
   `etu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,7 +38,7 @@ CREATE TABLE `cursus` (
 --
 
 CREATE TABLE `ele_formation` (
-  `cursus_label` varchar(10) NOT NULL,
+  `cursus_label` int(10) DEFAULT NULL,
   `s_seq` int(11) NOT NULL,
   `s_label` varchar(10) NOT NULL,
   `sigle` varchar(10) NOT NULL,
@@ -61,7 +59,9 @@ CREATE TABLE `ele_formation` (
 CREATE TABLE `etudiant` (
   `id` int(11) NOT NULL,
   `nom` varchar(20) NOT NULL,
-  `prenom` varchar(20) NOT NULL
+  `prenom` varchar(20) NOT NULL,
+  `admission` varchar(10) NOT NULL,
+  `filiere` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -88,6 +88,15 @@ ALTER TABLE `ele_formation`
 ALTER TABLE `etudiant`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cursus`
+--
+ALTER TABLE `cursus`
+  MODIFY `label` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --
