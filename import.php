@@ -66,10 +66,9 @@ error_reporting(E_ALL);
 
         //database
         $databasehost = "localhost";
-        $databasename = "projet_lo07";
-        $databasetable = "ele_formation";
+        $databasename = "projet_lo07";        
         $databaseusername = "root";
-        $databasepassword = "";
+        $databasepassword = "123456";
 
         // connect to the base donnees
         $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
@@ -81,7 +80,8 @@ error_reporting(E_ALL);
         print'<br>-------------------------------------------------<br>';
 
         // insert student's data to the table 'etudiant'
-        $sql1 = "insert ignore into etudiant(id, nom, prenom) values(" . $student['sid'] . ", '" . $student['nom'] . "', '" . $student['prenom'] . "')";
+        $sql1 = "insert ignore into etudiant(id, nom, prenom, admission, filiere) values(" . $student['sid'] . ", '" . $student['nom'] . "', "
+                . "'" . $student['prenom'] . "', '" . $student['admission'] . "', '" . $student['filiere'] . "')";
         if ($conn->query($sql1) === TRUE) {
             echo "Student's data inserted successfully";
         } else {
@@ -90,7 +90,7 @@ error_reporting(E_ALL);
         print'<br>-------------------------------------------------<br>';
 
         // insert cursus data to the table 'cursus'
-        $sql2 = "insert into cursus(label_cursus, etu) values('EL', " . $student['sid'] . ")";
+        $sql2 = "insert into cursus(label, etu) values(NULL, " . $student['sid'] . ")";
         if ($conn->query($sql2) === TRUE) {
             echo "Cursus data inserted successfully";
         } else {
@@ -103,8 +103,8 @@ error_reporting(E_ALL);
             print_r($line);
             echo '<br>';
             $sql3 = "INSERT INTO `ele_formation` "
-                    . "(`label_cursus`, `s_seq`, `s_label`, `sigle`, `categorie`, `affectation`, `utt`, `profil`, `credit`, `resultat`) "
-                    . "VALUES ('EL', '" . $line['s_seq']
+                    . "(`cursus_label`, `s_seq`, `s_label`, `sigle`, `categorie`, `affectation`, `utt`, `profil`, `credit`, `resultat`) "
+                    . "VALUES ((SELECT cursus.label from cursus WHERE cursus.etu=" . $student['sid'] . "), '" . $line['s_seq']
                     . "', '" . $line['s_label'] . "', '" . $line['sigle']
                     . "', '" . $line['categorie'] . "', '" . $line['affectation']
                     . "', '" . $line['utt'] . "', '" . $line['profil']
