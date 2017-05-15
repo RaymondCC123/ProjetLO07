@@ -66,27 +66,14 @@ error_reporting(E_ALL);
 
         //database
         $databasehost = "localhost";
-<<<<<<< HEAD
-        $databasename = "projet_lo07";
-        $databasetable = "cursus";
-        $csvfile = "/Applications/XAMPP/xamppfiles/htdocs/projet_lo07/projet/PRIOR_beatrice.csv";
-
-        // Vérifier l'existence du fichier csv
-            die("Fichier introuvable. Vérifiez le chemin d'accès.");
-        }
-
-        // connexion  la base de données
-        $conn = new mysqli($databasehost, $databasename);
-=======
         $databasename = "projet_lo07";        
         $databaseusername = "root";
         $databasepassword = "123456";
 
         // connect to the base donnees
         $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
->>>>>>> a731a520fdc54f85623893e61be64912cb71dc84
         if ($conn->connect_error) {
-            die("Echec de la connexion : " . $conn->connect_error);
+            die("Echec de la connexion: " . $conn->connect_error);
         } else {
             echo "Connexion réussie<br>";
         }
@@ -105,7 +92,7 @@ error_reporting(E_ALL);
         // insert cursus data to the table 'cursus'
         $sql2 = "insert into cursus(label, etu) values(NULL, " . $student['sid'] . ")";
         if ($conn->query($sql2) === TRUE) {
-            echo "Cursus inséré correctemen dans la base de données";
+            echo "Cursus inséré correctement dans la base de données";
         } else {
             echo "Error: " . $sql2 . "<br>" . $conn->error;
         }
@@ -123,7 +110,7 @@ error_reporting(E_ALL);
                     . "', '" . $line['utt'] . "', '" . $line['profil']
                     . "', '" . $line['credit'] . "', '" . $line['resultat'] . "')";
             if ($conn->query($sql3) === TRUE) {
-                echo "Element de Foration inséré correctement dans la base de données";
+                echo "Element de Formation inséré correctement dans la base de données";
             } else {
                 echo "Error: " . $sql3 . "<br>" . $conn->error;
             }
