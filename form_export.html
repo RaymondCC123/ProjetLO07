@@ -9,14 +9,56 @@ and open the template in the editor.
         <title>choix étudiant</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <h3>Veuiller choisir l'etudiant(e) dont vous voulez exporter le cursus : </h3>
+	
+	<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <img border="0" src="logo-utt.jpg" width="120" height="60">
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li><a href="#">Liste des cursus</a></li>
+				<li><a href="form_etu.html">Nouveau profil</a></li>
+				<li><a href="#">Règlement des études</a></li>
+			   </ul>
+			</div>
+		  </div>
+		</nav>
+  
+			<div class="container-fluid text-center">    
+			  <div class="row content">
+				<div class="col-sm-2 sidenav">
+				 
+				</div>
+				<div class="col-sm-8 text-left"> 
+				  <h1>Exporter un cursus </h1>
+				  <hr>
+				 </div>
+				
+			  </div>
+			</div>
+	
+	
+        <h3 class="text-center">Veuiller choisir l'etudiant(e) dont vous voulez exporter le cursus : </h3> <br/>
 
         <form method="get" action="action_export.php" > 
-            <label for="id_etu">Numéro d'étudiant</label>
-            <input name="id_etu" type="text"/>
-            <input name="submit" type="submit" value="exporter"/>
+				<div class="col-md-4 col-md-offset-4">
+					<div class="input-group"> 
+						<span class="input-group-addon">N°étu</span>
+						<input type="text" name="id_etu" class="form-control" >
+					</div>
+				</div>
+				 <input name="submit" type="submit" value="Rechercher" class="btn btn-info"/>
+				
+			</div>
         </form>
     </body>
 </html>
