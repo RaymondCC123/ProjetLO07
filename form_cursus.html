@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>formulaire cursus</title>
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
     </head>
     <body>
 
@@ -18,9 +21,44 @@
             }
         </script>
 
-		<h1 class="text-center"> Décrivez votre cursus</h1> <br/><br/>
 		
-        <form method="get" name="form" id="form" action="action_cursus.php">
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <img border="0" src="logo-utt.jpg" width="120" height="60">
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li><a href="#">Liste des cursus</a></li>
+				<li><a href="form_etu.html">Nouveau profil</a></li>
+				<li><a href="#">Règlement des études</a></li>
+			   </ul>
+			</div>
+		  </div>
+		</nav>
+  
+			<div class="container-fluid text-center">    
+			  <div class="row content">
+				<div class="col-sm-2 sidenav">
+				 
+				</div>
+				<div class="col-sm-8 text-left"> 
+				  <h1>Décrivez votre cursus</h1>
+				  <hr>
+				 </div>
+				
+			  </div>
+			</div>
+					
+		
+	
+		
+        <form method="get" name="form" id="form" action="action_cursus.php" class="form-inline">
             <div id="tab" > 
                
 			   <fieldset class="col-md-4 col-md-offset-4" class="form-group">    
@@ -29,24 +67,29 @@
 					<div class="input-group"> 
 						<span class="input-group-addon">N°étu</span>
 						<input type="text" name="id" class="form-control" >
-					</div>
+					</div><br/><br/>
 				</div>
 				</fieldset>
-				<br/><br/>
+				
 				
                 <fieldset id="a_cloner" class="col-md-4 col-md-offset-4" class="form-group">
 				
-                    <legend class=> Ajouter un nouvel élement de formation</legend>
+                    <legend > Ajouter un nouvel élement de formation</legend>
 
 					<!-- case n°semestre-->
-					<div class="input-group">   
+					
+					<div class="input-group">                                                
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon">En quel semestre avez-vous effectué cette UE ?
 								</span>
 							</div>
-						<select name="sem_seq" class="selectpicker">
-							<option value="1">1</option>
+						</div>
+					</div>
+				
+				
+                <select name="se_seq"  class="form-control form-control-sm">                            <!-- case filière-->
+                    <option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
@@ -59,9 +102,14 @@
 							<option value="11">11</option>
 							<option value="12">12</option>
 							<option value="13">13</option>
-						</select>	
-						</div>
-					</div>
+                </select>	
+						<br/> <br/>
+					
+					
+					
+					
+					
+					
 					
 					<!-- case label semestre-->
 					<div class="form-group">
@@ -69,7 +117,7 @@
 							<span class="input-group-addon">Label du semestre</span>
 							<input type="text" class="form-control" name="label" placeholder="ex: ISI1" >
 						</div>
-					</div>
+					</div><br/> <br/>
 					
                    
 				   <!-- case sigle UE-->
@@ -78,7 +126,7 @@
 						<span class="input-group-addon">Sigle de l'UE</span>
 						<input type="text" name="sigle" placeholder="ex: LO07" class="form-control" >
 					</div>
-				</div>
+				</div><br/> <br/>
 				   
                     
 					<!-- case catégorie-->
@@ -88,7 +136,9 @@
 								<span class="input-group-addon">Catégorie
 								</span>
 							</div>
-						<select name="categorie" class="selectpicker">
+						</div>
+					</div>
+							<select name="categorie"  class="form-control">
 								<option value="CS">CS</option>
 									<option value="TM">TM</option>
 									<option value="NPML">NPML</option>
@@ -101,8 +151,7 @@
 									<option value="EC">EC</option>	  
 									<option value="ATDOC">ATDOC</option>
 							</select>	
-						</div>
-					</div> 
+						 <br/> <br/>
 				
 
                     <div class="input-group">   
@@ -111,16 +160,16 @@
 								<span class="input-group-addon">UE suivie pendant
 								</span>
 							</div>
-						
-							<select name="affectation">
+						</div>
+					</div>
+							<select name="affectation"  class="form-control form-control-sm">
 								<option value="TC">TC</option>
 								<option value="BR">BR</option>
 								<option value="TCBR">TCBR</option>
 								<option value="FCBR">FCBR</option>
 								<option value="UTT">UTT</option>
 							</select>	
-						</div>
-					</div>
+						<br/> <br/>
 					
 
                     <div class="input-group">   
@@ -129,13 +178,13 @@
 								<span class="input-group-addon">UE suivie à l'UTT ?
 								</span>
 							</div>
-					
-							<select name="utt">
+						</div>
+					</div>
+							<select name="utt"  class="form-control form-control-sm">
 								<option value="y">oui</option>
 								<option value="n">non</option>
 							</select>	
-						</div>
-					</div>
+						<br/> <br/>
 					
                     <div class="input-group">   
 						<div class="form-group">
@@ -143,20 +192,20 @@
 								<span class="input-group-addon">L'UE appartient au profil (TC, branche ou filière) ?
 								</span>
 							</div>
-						
-							<select name="profil">
+						</div>
+					</div>
+							<select name="profil" class="form-control form-control-sm">
 								<option value="y">oui</option>
 								<option value="n">non</option>
 							</select>	
-						</div>
-					</div>
+						 <br/> <br/>
 							
 					<div class="form-group" class="col-md-4 col-md-offset-4" >
 						<div class="input-group"> 
 							<span class="input-group-addon">Crédits attribués</span>
 							<input type="text" name="credit" class="form-control" >
 						</div>
-					</div> 
+					</div> <br/> <br/>
 					
 
                     <div class="input-group">   
@@ -165,7 +214,9 @@
 								<span class="input-group-addon">Résultat
 								</span>
 							</div>
-								<select name="resultat" class="selectpicker">
+						</div>
+					</div>
+								<select name="resultat" class="form-control form-control-sm">
 									<option value="A">A</option>
 									<option value="B">B</option>
 									<option value="C">C</option>
@@ -178,9 +229,9 @@
 									<option value="RES">RES</option>
 									<option value="EQU">EQU</option>
 								</select>	
-							</div>
-					</div>
+							
 					
+				
 
   <HR  width="100%">
   <HR  width="100%">
@@ -193,9 +244,11 @@
 			
 			<div class="col-md-4 col-md-offset-4">
 				<input placeholder="valider" type="submit" class="btn btn-info"/>
-				<input type ="reset" value="annuler" class="btn btn-warning"/>
-			</div>
+				<input type ="reset" value="annuler" class="btn btn-warning"/><br/><br/><br/>
 		   
+			</div>
+			
+			
         </form>
 
 
