@@ -62,10 +62,19 @@
         <div class="container">
             <h2>Tronc Commun</h2>
 
-            <table class="table table-bordered">
-                <thead>
+            <?php
+            $id_Etu = $_POST["etu0"];
+            echo 'Etudiant : '.$id_Etu.'<br>';
+            $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
+            if ($result_etu_cursus->num_rows > 0) {
+                // output data of each row
+                while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
+                    $cursus_label = $row_cursus["label"];                                       
+                    echo '    
+                    <table class="table table-bordered">
+                    <thead>
                     <tr>                        
-                        <th></th>            
+                        <th>Cursus_label : '.$cursus_label.'</th>            
                         <th>CS</th>
                         <th>TM</th>
                         <th>ST</th>
@@ -75,14 +84,15 @@
                         <th>NPML</th>
 
                     </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TC';";
+                    </thead>
+                    <tbody>
+                    ';
+
+                    $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TC' "
+                            . "AND cursus_label='$cursus_label';";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
-                        // output data of each row
-                        print_r($result_cs);
+                        // output data of each row                        
                         while ($row = $result->fetch_assoc()) {
                             $semestre = $row["s_label"];
                             echo '
@@ -90,86 +100,86 @@
                             <td>' . $semestre . '</td>';
 
                             $result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='CS' AND affectation='TC';");
+                                AND categorie='CS' AND affectation='TC' AND cursus_label='$cursus_label';");
 
                             echo '<td>';
                             while ($row_cs = $result_cs->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_cs["sigle"] . ' | UTT : ' . $row_cs["utt"] . ' | '
                                 . 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
-                                . 'Resultat : ' . $row_cs["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='TM' AND affectation='TC';");
+                                AND categorie='TM' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_tm = $result_tm->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_tm["sigle"] . ' | UTT : ' . $row_tm["utt"] . ' | '
                                 . 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
-                                . 'Resultat : ' . $row_tm["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='ST' AND affectation='TC';");
+                                AND categorie='ST' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_st = $result_st->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_st["sigle"] . ' | UTT : ' . $row_st["utt"] . ' | '
                                 . 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
-                                . 'Resultat : ' . $row_st["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_st["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='EC' AND affectation='TC';");
+                                AND categorie='EC' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_ec = $result_ec->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_ec["sigle"] . ' | UTT : ' . $row_ec["utt"] . ' | '
                                 . 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
-                                . 'Resultat : ' . $row_ec["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='ME' AND affectation='TC';");
+                                AND categorie='ME' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_me = $result_me->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_me["sigle"] . ' | UTT : ' . $row_me["utt"] . ' | '
                                 . 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
-                                . 'Resultat : ' . $row_me["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_me["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='CT' AND affectation='TC';");
+                                AND categorie='CT' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_ct = $result_ct->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_ct["sigle"] . ' | UTT : ' . $row_ct["utt"] . ' | '
                                 . 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
-                                . 'Resultat : ' . $row_ct["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
 
                             $result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
-                                AND categorie='CT' AND affectation='TC';");
+                                AND categorie='CT' AND affectation='TC' AND cursus_label='$cursus_label';");
                             echo '<td>';
                             while ($row_npml = $result_npml->fetch_assoc()) {
                                 echo '                            
                                 sigle : ' . $row_npml["sigle"] . ' | UTT : ' . $row_npml["utt"] . ' | '
                                 . 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
-                                . 'Resultat : ' . $row_npml["resultat"] . '<br>';
+                                . 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
                             }
                             echo '</td>';
 
@@ -179,10 +189,13 @@
                     } else {
                         echo "0 results";
                     }
-                    ?>
-
-                </tbody>
-            </table>            
+                }
+            }
+            echo '        
+            </tbody>
+            </table>
+            ';
+            ?>
         </div>
     </body>
 </html>
