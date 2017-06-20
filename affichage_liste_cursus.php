@@ -8,13 +8,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
-            
-            
+
+
             function R_ACTUEL_BR() {
                 var alert = "";//global var
                 //window.alert(alert);
                 R01();
-                window.alert(alert);
                 R02();
                 R03();
                 R04();
@@ -28,164 +27,161 @@
                 R12();
                 R13();
                 R14();
-
-
+                if(alert === ""){
+                window.alert("Felicitations ! Vous pouvez obtenir votre diplome de l'UTT maintenant !");    
+                }else{
+                window.alert(alert);
+                }
+                
                 function R01() {
-                    var total_cs_tm_TCBR = (document.getElementById("total_cs_tm_TCBR").value);
-                    window.alert(typeof(total_cs_tm_TCBR));
-                    //var total_cs_tm_TCBR = parseInt("54");                    
-                    var seuil_cs_tm_TCBR = 100;
+
+                    var total_cs_tm_TCBR = (document.getElementById('total_cs_tm_TCBR').innerHTML);
+                    var seuil_cs_tm_TCBR = 54;
                     if (total_cs_tm_TCBR < seuil_cs_tm_TCBR) {
                         alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Tronc Commun de Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 01\n";
                     }
                 }
 
-
                 function R02() {
-                    var total_cs_tm_FCBR = document.getElementById("total_cs_tm_FCBR");
+                    var total_cs_tm_FCBR = document.getElementById("total_cs_tm_FCBR").innerHTML;
                     var seuil_cs_tm_FCBR = 30;
                     if (total_cs_tm_FCBR < seuil_cs_tm_FCBR) {
                         alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Filiere\n";
                         return false;
-                    } else {
-                        alert += "bien joue 02\n";
                     }
                 }
 
                 function R03() {
-                    var total_cs_BR = document.getElementById("total_cs_TCBR") + document.getElementById("total_cs_FCBR");
+                    var total_cs_TCBR = parseInt(document.getElementById("total_cs_TCBR").innerHTML, 10);
+                    var total_cs_FCBR = parseInt(document.getElementById("total_cs_FCBR").innerHTML, 10);
+                    var total_cs_BR = total_cs_TCBR + total_cs_FCBR;
                     var seuil_cs_BR = 30;
                     if (total_cs_BR < seuil_cs_BR) {
                         alert += "Vous n'avez pas assez de credits CS pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 03\n";
                     }
                 }
 
                 function R04() {
-                    var total_tm_BR = document.getElementById("total_tm_TCBR") + document.getElementById("total_tm_FCBR");
+                    var total_cs_TCBR = parseInt(document.getElementById("total_tm_TCBR").innerHTML, 10);
+                    var total_cs_FCBR = parseInt(document.getElementById("total_tm_FCBR").innerHTML, 10);
+                    var total_tm_BR = total_cs_TCBR + total_cs_FCBR;
                     var seuil_tm_BR = 30;
                     if (total_tm_BR < seuil_tm_BR) {
                         alert += "Vous n'avez pas assez de credits TM pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 04\n";
                     }
                 }
 
                 function R05() {
-                    var total_st_TCBR = document.getElementById("total_st_TCBR");
+                    var total_st_TCBR = document.getElementById("total_st_TCBR").innerHTML;
                     var seuil_st_TCBR = 30;
                     if (total_st_TCBR < seuil_st_TCBR) {
                         alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 05\n";
                     }
                 }
 
                 function R06() {
-                    var total_st_FCBR = document.getElementById("total_st_FCBR");
+                    var total_st_FCBR = document.getElementById("total_st_FCBR").innerHTML;
                     var seuil_st_FCBR = 30;
                     if (total_st_FCBR < seuil_st_FCBR) {
                         alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n";
                         return false;
-                    } else {
-                        alert += "bien joue 06\n";
                     }
                 }
 
                 function R07() {
-                    var total_ec_BR = document.getElementById("total_ec_TCBR") + document.getElementById("total_ec_FCBR");
+                    var total_ec_TCBR = parseInt(document.getElementById("total_ec_TCBR").innerHTML, 10);
+                    var total_ec_FCBR = parseInt(document.getElementById("total_ec_FCBR").innerHTML, 10);
+                    var total_ec_BR = total_ec_TCBR + total_ec_FCBR;
                     var seuil_ec_BR = 12;
                     if (total_ec_BR < seuil_ec_BR) {
                         alert += "Vous n'avez pas assez de credits EC pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 07\n";
                     }
                 }
 
                 function R08() {
-                    var total_me_BR = document.getElementById("total_me_TCBR") + document.getElementById("total_me_FCBR");
+                    var total_me_TCBR = parseInt(document.getElementById("total_me_TCBR").innerHTML, 10);
+                    var total_me_FCBR = parseInt(document.getElementById("total_me_FCBR").innerHTML, 10);
+                    var total_me_BR = total_me_TCBR + total_me_FCBR;
                     var seuil_me_BR = 4;
                     if (total_me_BR < seuil_me_BR) {
                         alert += "Vous n'avez pas assez de credits ME pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 08\n";
                     }
                 }
 
                 function R09() {
-                    var total_ct_BR = document.getElementById("total_ct_TCBR") + document.getElementById("total_ct_FCBR");
+                    var total_ct_TCBR = parseInt(document.getElementById("total_ct_TCBR").innerHTML, 10);
+                    var total_ct_FCBR = parseInt(document.getElementById("total_ct_FCBR").innerHTML, 10);
+
+                    var total_ct_BR = total_ct_TCBR + total_ct_FCBR;
                     var seuil_ct_BR = 4;
                     if (total_ct_BR < seuil_ct_BR) {
                         alert += "Vous n'avez pas assez de credits CT pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 09\n";
                     }
                 }
 
                 function R10() {
-                    var total_me_ct_BR = document.getElementById("total_me_TCBR") + document.getElementById("total_me_FCBR")
-                            + document.getElementById("total_ct_TCBR") + document.getElementById("total_ct_FCBR");
+                    var total_me_ct_BR = parseInt(document.getElementById("total_me_TCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_me_FCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_ct_TCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_ct_FCBR").innerHTML, 10);
+                    //window.alert(total_me_ct_BR);        
                     var seuil_me_ct_BR = 16;
                     if (total_me_ct_BR < seuil_me_ct_BR) {
                         alert += "Vous n'avez pas assez de credits ME ou CT pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 10\n";
                     }
                 }
 
                 function R11() {
-                    var total_cs_tm_BR_utt = document.getElementById("total_cs_tm_TCBR_utt") + document.getElementById("total_cs_tm_FCBR_utt");
+                    var total_cs_tm_BR_utt = parseInt(document.getElementById("total_cs_tm_TCBR_utt").innerHTML, 10)
+                            + parseInt(document.getElementById("total_cs_tm_FCBR_utt").innerHTML, 10);
+                    //window.alert(total_cs_tm_BR_utt);                       
                     var seuil_cs_tm_BR_utt = 60;
                     if (total_cs_tm_BR_utt < seuil_cs_tm_BR_utt) {
                         alert += "Vous n'avez pas assez de credits CS ou TM à l'UTT pour valider votre Branche\n";
                         return false;
-                    } else {
-                        alert += "bien joue 11\n";
                     }
                 }
 
                 function R12() {
-                    var total_se = document.getElementById("total_se_TC")
-                            + document.getElementById("total_se_TCBR") + document.getElementById("total_se_FCBR");
+                    var total_se = parseInt(document.getElementById("total_se_TC").innerHTML, 10)
+                            + parseInt(document.getElementById("total_se_TCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_se_FCBR").innerHTML, 10);
+                    //window.alert(total_se);
                     if (total_se === 0) {
                         alert += "Vous n'avez pas passé le SE\n";
                         return false;
-                    } else {
-                        alert += "bien joue 12\n";
                     }
                 }
 
                 function R13() {
-                    var total_npml = document.getElementById("total_npml_TC")
-                            + document.getElementById("total_npml_TCBR") + document.getElementById("total_npml_FCBR");
-                    if (total_npml == 0) {
+                    var total_npml = parseInt(document.getElementById("total_npml_TC").innerHTML, 10)
+                            + parseInt(document.getElementById("total_npml_TCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_npml_FCBR").innerHTML, 10);
+                    //window.alert(total_npml);                    
+                    if (total_npml === 0) {
                         alert += "Vous n'avez pas passé le NPML\n";
                         return false;
-                    } else {
-                        alert += "bien joue 13\n";
-                    }
+                    } 
                 }
 
                 function R14() {
-                    var total = document.getElementById("total_TC") + document.getElementById("total_TCBR") + document.getElementById("total_FCBR");
+                    var total = parseInt(document.getElementById("total_TC").innerHTML, 10)
+                            + parseInt(document.getElementById("total_TCBR").innerHTML, 10)
+                            + parseInt(document.getElementById("total_FCBR").innerHTML, 10);
+                    //window.alert(total);                                                            
                     var seuil = 180;
                     if (total < seuil) {
                         alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n";
                         return false;
-                    } else {
-                        alert += "bien joue 14\n";
-                    }
+                    } 
                 }
             }
         </script>
@@ -276,18 +272,18 @@
                     $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TC' "
                             . "AND cursus_label='$cursus_label';";
                     $result = $conn->query($sql);
+                    $total_cs = 0;
+                    $total_cs_utt = 0;
+                    $total_tm = 0;
+                    $total_tm_utt = 0;
+                    $total_st = 0;
+                    $total_ec = 0;
+                    $total_me = 0;
+                    $total_ct = 0;
+                    $total_hp = 0;
+                    $total_npml = 0;
+                    $total_se = 0;
                     if ($result->num_rows > 0) {
-                        $total_cs = 0;
-                        $total_cs_utt = 0;
-                        $total_tm = 0;
-                        $total_tm_utt = 0;
-                        $total_st = 0;
-                        $total_ec = 0;
-                        $total_me = 0;
-                        $total_ct = 0;
-                        $total_hp = 0;
-                        $total_npml = 0;
-                        $total_se = 0;
 
                         // output data of each row                        
                         while ($row = $result->fetch_assoc()) {
@@ -426,10 +422,13 @@
 
                             echo '</tr>';
                         }
-                        $total_cs_tm_TC = $total_cs + $total_tm;
-                        $total_cs_tm_TC_utt = $total_cs_utt + $total_tm_utt;
-                        $total_TC = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-                        echo '
+                    } else {
+                        echo "0 results";
+                    }
+                    $total_cs_tm_TC = $total_cs + $total_tm;
+                    $total_cs_tm_TC_utt = $total_cs_utt + $total_tm_utt;
+                    $total_TC = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                    echo '
                             <tr>
                             <td>Total TC</td>
                             <td>' . $total_cs . '</td>
@@ -452,9 +451,6 @@
                             <td id="total_TC">' . $total_TC . '</td>
                             </tr>
                             ';
-                    } else {
-                        echo "0 results";
-                    }
                 }
             }
             echo '        
@@ -546,18 +542,19 @@
                     $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TCBR' "
                             . "AND cursus_label='$cursus_label';";
                     $result = $conn->query($sql);
+                    $total_cs = 0;
+                    $total_cs_utt = 0;
+                    $total_tm = 0;
+                    $total_tm_utt = 0;
+                    $total_st = 0;
+                    $total_ec = 0;
+                    $total_me = 0;
+                    $total_ct = 0;
+                    $total_hp = 0;
+                    $total_npml = 0;
+                    $total_se = 0;
+
                     if ($result->num_rows > 0) {
-                        $total_cs = 0;
-                        $total_cs_utt = 0;
-                        $total_tm = 0;
-                        $total_tm_utt = 0;
-                        $total_st = 0;
-                        $total_ec = 0;
-                        $total_me = 0;
-                        $total_ct = 0;
-                        $total_hp = 0;
-                        $total_npml = 0;
-                        $total_se = 0;
 
                         // output data of each row                        
                         while ($row = $result->fetch_assoc()) {
@@ -705,10 +702,13 @@
 
                             echo '</tr>';
                         }
-                        $total_cs_tm_TCBR = $total_cs + $total_tm;
-                        $total_cs_tm_TCBR_utt = $total_cs_utt + $total_tm_utt;
-                        $total_TCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-                        echo '
+                    } else {
+                        echo "0 results";
+                    }
+                    $total_cs_tm_TCBR = $total_cs + $total_tm;
+                    $total_cs_tm_TCBR_utt = $total_cs_utt + $total_tm_utt;
+                    $total_TCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                    echo '
                             <tr>
                             <td>Total TCBR</td>
                             <td id="total_cs_TCBR">' . $total_cs . '</td>
@@ -731,9 +731,6 @@
                             <td id="total_TCBR">' . $total_TCBR . '</td>
                             </tr>
                             ';
-                    } else {
-                        echo "0 results";
-                    }
                 }
             }
             echo '        
@@ -816,18 +813,20 @@
                     $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='FCBR' "
                             . "AND cursus_label='$cursus_label';";
                     $result = $conn->query($sql);
+
+                    $total_cs = 0;
+                    $total_cs_utt = 0;
+                    $total_tm = 0;
+                    $total_tm_utt = 0;
+                    $total_st = 0;
+                    $total_ec = 0;
+                    $total_me = 0;
+                    $total_ct = 0;
+                    $total_hp = 0;
+                    $total_npml = 0;
+                    $total_se = 0;
+
                     if ($result->num_rows > 0) {
-                        $total_cs = 0;
-                        $total_cs_utt = 0;
-                        $total_tm = 0;
-                        $total_tm_utt = 0;
-                        $total_st = 0;
-                        $total_ec = 0;
-                        $total_me = 0;
-                        $total_ct = 0;
-                        $total_hp = 0;
-                        $total_npml = 0;
-                        $total_se = 0;
 
                         // output data of each row                        
                         while ($row = $result->fetch_assoc()) {
@@ -975,10 +974,13 @@
 
                             echo '</tr>';
                         }
-                        $total_cs_tm_FCBR = $total_cs + $total_tm;
-                        $total_cs_tm_FCBR_utt = $total_cs_utt + $total_tm_utt;
-                        $total_FCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-                        echo '
+                    } else {
+                        echo "0 results";
+                    }
+                    $total_cs_tm_FCBR = $total_cs + $total_tm;
+                    $total_cs_tm_FCBR_utt = $total_cs_utt + $total_tm_utt;
+                    $total_FCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                    echo '
                             <tr>
                             <td>Total FCBR</td>
                             <td id="total_cs_FCBR">' . $total_cs . '</td>
@@ -1001,9 +1003,6 @@
                             <td id="total_FCBR">' . $total_FCBR . '</td>
                             </tr>
                             ';
-                    } else {
-                        echo "0 results";
-                    }
                 }
             }
             echo '        
