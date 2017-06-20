@@ -6,14 +6,48 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>choix étudiant</title>
+        <title>export cursus</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		
+		<style>
+	/* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height:800px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
     </head>
     <body>
 	
-	<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse" style="background-color:Black;">
 		  <div class="container-fluid">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,33 +66,36 @@ and open the template in the editor.
 			</div>
 		  </div>
 		</nav>
-  
-			<div class="container-fluid text-center">    
-			  <div class="row content">
-				<div class="col-sm-2 sidenav">
-				 
-				</div>
-				<div class="col-sm-8 text-left"> 
-				  <h1>Exporter un cursus </h1>
-				  <hr>
-				 </div>
-				
-			  </div>
-			</div>
-	
-	
-        <h3 class="text-center">Veuiller choisir l'etudiant(e) dont vous voulez exporter le cursus : </h3> <br/>
 
-        <form method="get" action="action_export.php" > 
-				<div class="col-md-4 col-md-offset-4">
-					<div class="input-group"> 
-						<span class="input-group-addon">N°étu</span>
-						<input type="text" name="id_etu" class="form-control" >
-					</div>
-				</div>
-				 <input name="submit" type="submit" value="Rechercher" class="btn btn-info"/>
-				
+		<div class="container-fluid text-center">    
+		  <div class="row content">
+			<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise";>
 			</div>
-        </form>
-    </body>
+			
+			<div class="col-sm-8 text-left"> 
+				<div class="text-left"> 
+					<h1>Exporter le cursus</h1>
+					<hr>
+				</div>
+				<h3 class="text-center">Veuiller choisir l'etudiant(e) dont vous voulez exporter le cursus : </h3> <br/>
+				<form method="get" action="action_export.php" > 
+					<div>
+						<div class="input-group col-md-6 col-md-offset-3" > 
+							<span class="input-group-addon">N°étu</span>
+							<input type="text" name="id_etu" class="form-control" >
+						</div>
+					</div><br/>
+					<input name="submit" type="submit" value="Rechercher" class="btn btn-info col-md-2 col-md-offset-6"/>
+				</form>
+			</div>
+			
+			
+			<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
+			</div>
+		  </div>
+		</div>
+
+
+
+</body>
 </html>
