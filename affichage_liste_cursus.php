@@ -27,12 +27,12 @@
                 R12();
                 R13();
                 R14();
-                if(alert === ""){
-                window.alert("Felicitations ! Vous pouvez obtenir votre diplome de l'UTT maintenant !");    
-                }else{
-                window.alert(alert);
+                if (alert === "") {
+                    window.alert("Felicitations ! Vous pouvez obtenir votre diplome de l'UTT maintenant !");
+                } else {
+                    window.alert(alert);
                 }
-                
+
                 function R01() {
 
                     var total_cs_tm_TCBR = (document.getElementById('total_cs_tm_TCBR').innerHTML);
@@ -169,7 +169,7 @@
                     if (total_npml === 0) {
                         alert += "Vous n'avez pas passé le NPML\n";
                         return false;
-                    } 
+                    }
                 }
 
                 function R14() {
@@ -181,11 +181,11 @@
                     if (total < seuil) {
                         alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n";
                         return false;
-                    } 
+                    }
                 }
             }
-	    
-   	    function R_FUTUR_BR() {
+
+            function R_FUTUR_BR() {
                 var alert = "";//global var                
 
                 var total_cs_tm_TCBR = parseInt(document.getElementById('total_cs_tm_TCBR').innerHTML, 10);
@@ -360,44 +360,44 @@
                 }
             }
         </script>
-		
-		<style>
-	/* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 3000px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-		
-		
-		
-		
+
+        <style>
+            /* Remove the navbar's default margin-bottom and rounded borders */ 
+            .navbar {
+                margin-bottom: 0;
+                border-radius: 0;
+            }
+
+            /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+            .row.content {height: 3000px}
+
+            /* Set gray background color and 100% height */
+            .sidenav {
+                padding-top: 20px;
+                background-color: #f1f1f1;
+                height: 100%;
+            }
+
+            /* Set black background color, white text and some padding */
+            footer {
+                background-color: #555;
+                color: white;
+                padding: 15px;
+            }
+
+            /* On small screens, set height to 'auto' for sidenav and grid */
+            @media screen and (max-width: 767px) {
+                .sidenav {
+                    height: auto;
+                    padding: 15px;
+                }
+                .row.content {height:auto;} 
+            }
+        </style>
+
+
+
+
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -422,44 +422,44 @@
 
 
         <div class="container-fluid text-center">    
-		<div class="row content">
-			<div class="col-sm-1 sidenav" style="background-color:MediumTurquoise;">
-			</div>
-	
-			<div class="col-sm-10 text-left"> 
-			 <div class="text-left"> 
-				<h1>Votre cursus en tronc commun</h1>
-				<hr>
-			  </div>
+            <div class="row content">
+                <div class="col-sm-1 sidenav" style="background-color:MediumTurquoise;">
+                </div>
 
-		<?php
-		// connect to the base donnees
-		$databasehost = "localhost";
-		$databasename = "projet_lo07";
-		$databaseusername = "root";
-		$databasepassword = "123456";
+                <div class="col-sm-10 text-left"> 
+                    <div class="text-left"> 
+                        <h1>Votre cursus en tronc commun</h1>
+                        <hr>
+                    </div>
 
-		$conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
-		if ($conn->connect_error) {
-			die("La connexion a échoué " . $conn->connect_error);
-		} else {
-			echo "Connection à BD réussie<br>";
-		}
-		?>
-				<div class="container">
-					<h2>Tronc Commun</h2>
+                    <?php
+                    // connect to the base donnees
+                    $databasehost = "localhost";
+                    $databasename = "projet_lo07";
+                    $databaseusername = "root";
+                    $databasepassword = "123456";
 
-		<?php
-		$id_Etu = $_POST["etu1"];
-		echo 'Etudiant : ' . $id_Etu . '<br>';
-		echo 'Les suivants sont tous votre cursus<br>';
-		echo '-----------------------------------------------------------------------------<br>';
-		$result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
-		if ($result_etu_cursus->num_rows > 0) {
-			// output data of each row
-			while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
-				$cursus_label = $row_cursus["label"];
-				echo '    
+                    $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
+                    if ($conn->connect_error) {
+                        die("La connexion a échoué " . $conn->connect_error);
+                    } else {
+                        echo "Connection à BD réussie<br>";
+                    }
+                    ?>
+                    <div class="container">
+                        <h2>Tronc Commun</h2>
+
+                        <?php
+                        $id_Etu = $_POST["text_idETU1"];
+                        echo 'Etudiant : ' . $id_Etu . '<br>';
+                        echo 'Les suivants sont tous votre cursus<br>';
+                        echo '-----------------------------------------------------------------------------<br>';
+                        $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
+                        if ($result_etu_cursus->num_rows > 0) {
+                            // output data of each row
+                            while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
+                                $cursus_label = $row_cursus["label"];
+                                echo '    
 				<table class="table table-bordered">                    
 				<button onclick="R_ACTUEL_BR()">R_ACTUEL_BR</button>
 				<button onclick="R_FUTUR_BR()">R_FUTUR_BR</button>
@@ -481,166 +481,166 @@
 				<tbody>
 				';
 
-				$sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TC' "
-						. "AND cursus_label='$cursus_label';";
-				$result = $conn->query($sql);
-				$total_cs = 0;
-				$total_cs_utt = 0;
-				$total_tm = 0;
-				$total_tm_utt = 0;
-				$total_st = 0;
-				$total_ec = 0;
-				$total_me = 0;
-				$total_ct = 0;
-				$total_hp = 0;
-				$total_npml = 0;
-				$total_se = 0;
-				if ($result->num_rows > 0) {
+                                $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TC' "
+                                        . "AND cursus_label='$cursus_label';";
+                                $result = $conn->query($sql);
+                                $total_cs = 0;
+                                $total_cs_utt = 0;
+                                $total_tm = 0;
+                                $total_tm_utt = 0;
+                                $total_st = 0;
+                                $total_ec = 0;
+                                $total_me = 0;
+                                $total_ct = 0;
+                                $total_hp = 0;
+                                $total_npml = 0;
+                                $total_se = 0;
+                                if ($result->num_rows > 0) {
 
-					// output data of each row                        
-					while ($row = $result->fetch_assoc()) {
-						$semestre = $row["s_label"];
-						echo '
+                                    // output data of each row                        
+                                    while ($row = $result->fetch_assoc()) {
+                                        $semestre = $row["s_label"];
+                                        echo '
 						<tr>
 						<td>' . $semestre . '</td>';
 
-						$result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='CS' AND affectation='TC' AND cursus_label='$cursus_label';");
 
-						echo '<td>';
-						while ($row_cs = $result_cs->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_cs = $result_cs->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_cs["sigle"] . ' | UTT : ' . $row_cs["utt"] . ' | '
-							. 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
-							. 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
-							$total_cs += $row_cs["credit"];
-							if ($row_cs["utt"] == 'Y') {
-								$total_cs_utt += $row_cs["credit"];
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
+                                            . 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
+                                            $total_cs += $row_cs["credit"];
+                                            if ($row_cs["utt"] == 'Y') {
+                                                $total_cs_utt += $row_cs["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='TM' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_tm = $result_tm->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_tm = $result_tm->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_tm["sigle"] . ' | UTT : ' . $row_tm["utt"] . ' | '
-							. 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
-							. 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
-							$total_tm += $row_tm["credit"];
-							if ($row_tm["utt"] == 'Y') {
-								$total_tm_utt += $row_tm["credit"];
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
+                                            . 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
+                                            $total_tm += $row_tm["credit"];
+                                            if ($row_tm["utt"] == 'Y') {
+                                                $total_tm_utt += $row_tm["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='ST' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_st = $result_st->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_st = $result_st->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_st["sigle"] . ' | UTT : ' . $row_st["utt"] . ' | '
-							. 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
-							. 'Resultat : ' . $row_st["resultat"] . '<br><br>';
-							$total_st += $row_st["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
+                                            . 'Resultat : ' . $row_st["resultat"] . '<br><br>';
+                                            $total_st += $row_st["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='EC' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_ec = $result_ec->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_ec = $result_ec->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_ec["sigle"] . ' | UTT : ' . $row_ec["utt"] . ' | '
-							. 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
-							. 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
-							$total_ec += $row_ec["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
+                                            $total_ec += $row_ec["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='ME' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_me = $result_me->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_me = $result_me->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_me["sigle"] . ' | UTT : ' . $row_me["utt"] . ' | '
-							. 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
-							. 'Resultat : ' . $row_me["resultat"] . '<br><br>';
-							$total_me += $row_me["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
+                                            . 'Resultat : ' . $row_me["resultat"] . '<br><br>';
+                                            $total_me += $row_me["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='CT' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_ct = $result_ct->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_ct = $result_ct->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_ct["sigle"] . ' | UTT : ' . $row_ct["utt"] . ' | '
-							. 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
-							. 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
-							$total_ct += $row_ct["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
+                                            $total_ct += $row_ct["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='HP' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_hp = $result_hp->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_hp = $result_hp->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_hp["sigle"] . ' | UTT : ' . $row_hp["utt"] . ' | '
-							. 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
-							. 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
-							$total_hp += $row_hp["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
+                                            . 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
+                                            $total_hp += $row_hp["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='NPML' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_npml = $result_npml->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_npml = $result_npml->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_npml["sigle"] . ' | UTT : ' . $row_npml["utt"] . ' | '
-							. 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
-							. 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
-							if ($row_npml["resultat"] == 'ADM') {
-								$total_npml++;
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
+                                            . 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
+                                            if ($row_npml["resultat"] == 'ADM') {
+                                                $total_npml++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='SE' AND affectation='TC' AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_se = $result_se->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_se = $result_se->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_se["sigle"] . ' | UTT : ' . $row_se["utt"] . ' | '
-							. 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
-							. 'Resultat : ' . $row_se["resultat"] . '<br><br>';
-							if ($row_se["resultat"] == 'ADM') {
-								$total_se++;
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
+                                            . 'Resultat : ' . $row_se["resultat"] . '<br><br>';
+                                            if ($row_se["resultat"] == 'ADM') {
+                                                $total_se++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						echo '</tr>';
-					}
-				} else {
-					echo "0 results";
-				}
-				$total_cs_tm_TC = $total_cs + $total_tm;
-				$total_cs_tm_TC_utt = $total_cs_utt + $total_tm_utt;
-				$total_TC = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-				echo '
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                $total_cs_tm_TC = $total_cs + $total_tm;
+                                $total_cs_tm_TC_utt = $total_cs_utt + $total_tm_utt;
+                                $total_TC = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                                echo '
 						<tr>
 						<td>Total TC</td>
 						<td>' . $total_cs . '</td>
@@ -663,51 +663,51 @@
 						<td id="total_TC">' . $total_TC . '</td>
 						</tr>
 						';
-			}
-		}
-		echo '        
+                            }
+                        }
+                        echo '        
 		</tbody>
 		</table>
 		';
-		?>
-				</div>
+                        ?>
+                    </div>
 
 
-						<div class="text-left"> 
-							<h1>Votre cursus en tronc commun de branche</h1>
-							<hr>
-						</div>
+                    <div class="text-left"> 
+                        <h1>Votre cursus en tronc commun de branche</h1>
+                        <hr>
+                    </div>
 
 
-	<?php
-	// connect to the base donnees
-	$databasehost = "localhost";
-	$databasename = "projet_lo07";
-	$databaseusername = "root";
-	$databasepassword = "123456";
+                    <?php
+                    // connect to the base donnees
+                    $databasehost = "localhost";
+                    $databasename = "projet_lo07";
+                    $databaseusername = "root";
+                    $databasepassword = "123456";
 
-	$conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
-	if ($conn->connect_error) {
-		die("La connexion a échoué " . $conn->connect_error);
-	} else {
-		echo "Connection à BD réussie<br>";
-	}
-	?>
-				<div class="container">
-					<h2>Tronc Commun de Branche</h2>
+                    $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
+                    if ($conn->connect_error) {
+                        die("La connexion a échoué " . $conn->connect_error);
+                    } else {
+                        echo "Connection à BD réussie<br>";
+                    }
+                    ?>
+                    <div class="container">
+                        <h2>Tronc Commun de Branche</h2>
 
-	<?php
-	//$id_Etu = $_POST["etu1"];
-	echo 'Etudiant : ' . $id_Etu . '<br>';
-	echo 'Les suivants sont tous votre cursus<br>';
-	echo '-----------------------------------------------------------------------------<br>';
-	$result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
-	if ($result_etu_cursus->num_rows > 0) {
-		// output data of each row
-		while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
-			$cursus_label = $row_cursus["label"];
+                        <?php
+                        //$id_Etu = $_POST["etu1"];
+                        echo 'Etudiant : ' . $id_Etu . '<br>';
+                        echo 'Les suivants sont tous votre cursus<br>';
+                        echo '-----------------------------------------------------------------------------<br>';
+                        $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
+                        if ($result_etu_cursus->num_rows > 0) {
+                            // output data of each row
+                            while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
+                                $cursus_label = $row_cursus["label"];
 
-			echo '    
+                                echo '    
 			
 			<table class="table table-bordered">
 			<button onclick="R_ACTUEL_BR()">R_ACTUEL_BR</button>
@@ -730,176 +730,176 @@
 			<tbody>
 			';
 
-			$sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TCBR' "
-					. "AND cursus_label='$cursus_label';";
-			$result = $conn->query($sql);
-			$total_cs = 0;
-			$total_cs_utt = 0;
-			$total_tm = 0;
-			$total_tm_utt = 0;
-			$total_st = 0;
-			$total_ec = 0;
-			$total_me = 0;
-			$total_ct = 0;
-			$total_hp = 0;
-			$total_npml = 0;
-			$total_se = 0;
+                                $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='TCBR' "
+                                        . "AND cursus_label='$cursus_label';";
+                                $result = $conn->query($sql);
+                                $total_cs = 0;
+                                $total_cs_utt = 0;
+                                $total_tm = 0;
+                                $total_tm_utt = 0;
+                                $total_st = 0;
+                                $total_ec = 0;
+                                $total_me = 0;
+                                $total_ct = 0;
+                                $total_hp = 0;
+                                $total_npml = 0;
+                                $total_se = 0;
 
-			if ($result->num_rows > 0) {
+                                if ($result->num_rows > 0) {
 
-				// output data of each row                        
-				while ($row = $result->fetch_assoc()) {
-					$semestre = $row["s_label"];
-					echo '
+                                    // output data of each row                        
+                                    while ($row = $result->fetch_assoc()) {
+                                        $semestre = $row["s_label"];
+                                        echo '
 					<tr>
 					<td>' . $semestre . '</td>';
 
 
-					$result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='CS' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_cs = $result_cs->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_cs = $result_cs->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_cs["sigle"] . ' | UTT : ' . $row_cs["utt"] . ' | '
-						. 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
-						. 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
-						$total_cs += $row_cs["credit"];
-						if ($row_cs["utt"] == 'Y') {
-							$total_cs_utt += $row_cs["credit"];
-						}
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
+                                            . 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
+                                            $total_cs += $row_cs["credit"];
+                                            if ($row_cs["utt"] == 'Y') {
+                                                $total_cs_utt += $row_cs["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-					$result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='TM' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_tm = $result_tm->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_tm = $result_tm->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_tm["sigle"] . ' | UTT : ' . $row_tm["utt"] . ' | '
-						. 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
-						. 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
-						$total_tm += $row_tm["credit"];
-						if ($row_tm["utt"] == 'Y') {
-							$total_tm_utt += $row_tm["credit"];
-						}
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
+                                            . 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
+                                            $total_tm += $row_tm["credit"];
+                                            if ($row_tm["utt"] == 'Y') {
+                                                $total_tm_utt += $row_tm["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-					$result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='ST' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_st = $result_st->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_st = $result_st->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_st["sigle"] . ' | UTT : ' . $row_st["utt"] . ' | '
-						. 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
-						. 'Resultat : ' . $row_st["resultat"] . '<br><br>';
-						$total_st += $row_st["credit"];
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
+                                            . 'Resultat : ' . $row_st["resultat"] . '<br><br>';
+                                            $total_st += $row_st["credit"];
+                                        }
+                                        echo '</td>';
 
 
-					$result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='EC' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_ec = $result_ec->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_ec = $result_ec->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_ec["sigle"] . ' | UTT : ' . $row_ec["utt"] . ' | '
-						. 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
-						. 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
-						$total_ec += $row_ec["credit"];
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
+                                            $total_ec += $row_ec["credit"];
+                                        }
+                                        echo '</td>';
 
 
-					$result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='ME' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_me = $result_me->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_me = $result_me->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_me["sigle"] . ' | UTT : ' . $row_me["utt"] . ' | '
-						. 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
-						. 'Resultat : ' . $row_me["resultat"] . '<br><br>';
-						$total_me += $row_me["credit"];
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
+                                            . 'Resultat : ' . $row_me["resultat"] . '<br><br>';
+                                            $total_me += $row_me["credit"];
+                                        }
+                                        echo '</td>';
 
 
-					$result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='CT' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_ct = $result_ct->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_ct = $result_ct->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_ct["sigle"] . ' | UTT : ' . $row_ct["utt"] . ' | '
-						. 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
-						. 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
-						$total_ct += $row_ct["credit"];
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
+                                            $total_ct += $row_ct["credit"];
+                                        }
+                                        echo '</td>';
 
 
-					$result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='HP' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_hp = $result_hp->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_hp = $result_hp->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_hp["sigle"] . ' | UTT : ' . $row_hp["utt"] . ' | '
-						. 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
-						. 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
-						$total_hp += $row_hp["credit"];
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
+                                            . 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
+                                            $total_hp += $row_hp["credit"];
+                                        }
+                                        echo '</td>';
 
 
-					$result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='NPML' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_npml = $result_npml->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_npml = $result_npml->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_npml["sigle"] . ' | UTT : ' . $row_npml["utt"] . ' | '
-						. 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
-						. 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
-						if ($row_npml["resultat"] == 'ADM') {
-							$total_npml++;
-						}
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
+                                            . 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
+                                            if ($row_npml["resultat"] == 'ADM') {
+                                                $total_npml++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-					$result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 						AND categorie='SE' AND (affectation='TCBR' or affectation='BR') 
 						AND cursus_label='$cursus_label';");
-					echo '<td>';
-					while ($row_se = $result_se->fetch_assoc()) {
-						echo '                            
+                                        echo '<td>';
+                                        while ($row_se = $result_se->fetch_assoc()) {
+                                            echo '                            
 						sigle : ' . $row_se["sigle"] . ' | UTT : ' . $row_se["utt"] . ' | '
-						. 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
-						. 'Resultat : ' . $row_se["resultat"] . '<br><br>';
-						if ($row_se["resultat"] == 'ADM') {
-							$total_se++;
-						}
-					}
-					echo '</td>';
+                                            . 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
+                                            . 'Resultat : ' . $row_se["resultat"] . '<br><br>';
+                                            if ($row_se["resultat"] == 'ADM') {
+                                                $total_se++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-					echo '</tr>';
-				}
-			} else {
-				echo "0 results";
-			}
-			$total_cs_tm_TCBR = $total_cs + $total_tm;
-			$total_cs_tm_TCBR_utt = $total_cs_utt + $total_tm_utt;
-			$total_TCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-			echo '
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                $total_cs_tm_TCBR = $total_cs + $total_tm;
+                                $total_cs_tm_TCBR_utt = $total_cs_utt + $total_tm_utt;
+                                $total_TCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                                echo '
 					<tr>
 					<td>Total TCBR</td>
 					<td id="total_cs_TCBR">' . $total_cs . '</td>
@@ -922,47 +922,47 @@
 					<td id="total_TCBR">' . $total_TCBR . '</td>
 					</tr>
 					';
-		}
-	}
-	echo '        
+                            }
+                        }
+                        echo '        
 	</tbody>
 	</table>
 	';
-	?>
-				</div>
-				
-				<div class="text-left"> 
-					<h1>Votre cursus en filière de branche</h1>
-					<hr>
-				</div>
-	<?php
-	// connect to the base donnees
-	$databasehost = "localhost";
-	$databasename = "projet_lo07";
-	$databaseusername = "root";
-	$databasepassword = "123456";
+                        ?>
+                    </div>
 
-	$conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
-	if ($conn->connect_error) {
-		die("La connexion a échoué " . $conn->connect_error);
-	} else {
-		echo "Connection à BD réussie<br>";
-	}
-	?>
-				<div class="container">
-					<h2>Filiere</h2>
+                    <div class="text-left"> 
+                        <h1>Votre cursus en filière de branche</h1>
+                        <hr>
+                    </div>
+                    <?php
+                    // connect to the base donnees
+                    $databasehost = "localhost";
+                    $databasename = "projet_lo07";
+                    $databaseusername = "root";
+                    $databasepassword = "123456";
 
-		<?php
-		//$id_Etu = $_POST["etu2"];
-		echo 'Etudiant : ' . $id_Etu . '<br>';
-		echo 'Les suivants sont tous votre cursus<br>';
-		echo '-----------------------------------------------------------------------------<br>';
-		$result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
-		if ($result_etu_cursus->num_rows > 0) {
-			// output data of each row
-			while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
-				$cursus_label = $row_cursus["label"];
-				echo '    
+                    $conn = new mysqli($databasehost, $databaseusername, $databasepassword, $databasename);
+                    if ($conn->connect_error) {
+                        die("La connexion a échoué " . $conn->connect_error);
+                    } else {
+                        echo "Connection à BD réussie<br>";
+                    }
+                    ?>
+                    <div class="container">
+                        <h2>Filiere</h2>
+
+                        <?php
+                        //$id_Etu = $_POST["etu2"];
+                        echo 'Etudiant : ' . $id_Etu . '<br>';
+                        echo 'Les suivants sont tous votre cursus<br>';
+                        echo '-----------------------------------------------------------------------------<br>';
+                        $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
+                        if ($result_etu_cursus->num_rows > 0) {
+                            // output data of each row
+                            while ($row_cursus = $result_etu_cursus->fetch_assoc()) {
+                                $cursus_label = $row_cursus["label"];
+                                echo '    
 				<table class="table table-bordered">
 				<button onclick="R_ACTUEL_BR()">R_ACTUEL_BR</button>
 				<button onclick="R_FUTUR_BR()">R_FUTUR_BR</button>
@@ -983,177 +983,177 @@
 				<tbody>
 				';
 
-				$sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='FCBR' "
-						. "AND cursus_label='$cursus_label';";
-				$result = $conn->query($sql);
+                                $sql = "SELECT distinct s_label  FROM ele_formation WHERE affectation='FCBR' "
+                                        . "AND cursus_label='$cursus_label';";
+                                $result = $conn->query($sql);
 
-				$total_cs = 0;
-				$total_cs_utt = 0;
-				$total_tm = 0;
-				$total_tm_utt = 0;
-				$total_st = 0;
-				$total_ec = 0;
-				$total_me = 0;
-				$total_ct = 0;
-				$total_hp = 0;
-				$total_npml = 0;
-				$total_se = 0;
+                                $total_cs = 0;
+                                $total_cs_utt = 0;
+                                $total_tm = 0;
+                                $total_tm_utt = 0;
+                                $total_st = 0;
+                                $total_ec = 0;
+                                $total_me = 0;
+                                $total_ct = 0;
+                                $total_hp = 0;
+                                $total_npml = 0;
+                                $total_se = 0;
 
-				if ($result->num_rows > 0) {
+                                if ($result->num_rows > 0) {
 
-					// output data of each row                        
-					while ($row = $result->fetch_assoc()) {
-						$semestre = $row["s_label"];
-						echo '
+                                    // output data of each row                        
+                                    while ($row = $result->fetch_assoc()) {
+                                        $semestre = $row["s_label"];
+                                        echo '
 						<tr>
 						<td>' . $semestre . '</td>';
 
 
-						$result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_cs = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='CS' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_cs = $result_cs->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_cs = $result_cs->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_cs["sigle"] . ' | UTT : ' . $row_cs["utt"] . ' | '
-							. 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
-							. 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
-							$total_cs += $row_cs["credit"];
-							if ($row_cs["utt"] == 'Y') {
-								$total_cs_utt += $row_cs["credit"];
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_cs["profil"] . ' | Credit : ' . $row_cs["credit"] . ' | '
+                                            . 'Resultat : ' . $row_cs["resultat"] . '<br><br>';
+                                            $total_cs += $row_cs["credit"];
+                                            if ($row_cs["utt"] == 'Y') {
+                                                $total_cs_utt += $row_cs["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_tm = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='TM' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_tm = $result_tm->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_tm = $result_tm->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_tm["sigle"] . ' | UTT : ' . $row_tm["utt"] . ' | '
-							. 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
-							. 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
-							$total_tm += $row_tm["credit"];
-							if ($row_tm["utt"] == 'Y') {
-								$total_tm_utt += $row_tm["credit"];
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_tm["profil"] . ' | Credit : ' . $row_tm["credit"] . ' | '
+                                            . 'Resultat : ' . $row_tm["resultat"] . '<br><br>';
+                                            $total_tm += $row_tm["credit"];
+                                            if ($row_tm["utt"] == 'Y') {
+                                                $total_tm_utt += $row_tm["credit"];
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_st = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='ST' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_st = $result_st->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_st = $result_st->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_st["sigle"] . ' | UTT : ' . $row_st["utt"] . ' | '
-							. 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
-							. 'Resultat : ' . $row_st["resultat"] . '<br><br>';
-							$total_st += $row_st["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_st["profil"] . ' | Credit : ' . $row_st["credit"] . ' | '
+                                            . 'Resultat : ' . $row_st["resultat"] . '<br><br>';
+                                            $total_st += $row_st["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ec = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='EC' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_ec = $result_ec->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_ec = $result_ec->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_ec["sigle"] . ' | UTT : ' . $row_ec["utt"] . ' | '
-							. 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
-							. 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
-							$total_ec += $row_ec["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_ec["profil"] . ' | Credit : ' . $row_ec["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ec["resultat"] . '<br><br>';
+                                            $total_ec += $row_ec["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_me = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='ME' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_me = $result_me->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_me = $result_me->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_me["sigle"] . ' | UTT : ' . $row_me["utt"] . ' | '
-							. 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
-							. 'Resultat : ' . $row_me["resultat"] . '<br><br>';
-							$total_me += $row_me["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_me["profil"] . ' | Credit : ' . $row_me["credit"] . ' | '
+                                            . 'Resultat : ' . $row_me["resultat"] . '<br><br>';
+                                            $total_me += $row_me["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_ct = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='CT' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_ct = $result_ct->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_ct = $result_ct->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_ct["sigle"] . ' | UTT : ' . $row_ct["utt"] . ' | '
-							. 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
-							. 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
-							$total_ct += $row_ct["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_ct["profil"] . ' | Credit : ' . $row_ct["credit"] . ' | '
+                                            . 'Resultat : ' . $row_ct["resultat"] . '<br><br>';
+                                            $total_ct += $row_ct["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_hp = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='HP' AND (affectation='FCBR' or affectation='BR') 
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_hp = $result_hp->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_hp = $result_hp->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_hp["sigle"] . ' | UTT : ' . $row_hp["utt"] . ' | '
-							. 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
-							. 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
-							$total_hp += $row_hp["credit"];
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_hp["profil"] . ' | Credit : ' . $row_hp["credit"] . ' | '
+                                            . 'Resultat : ' . $row_hp["resultat"] . '<br><br>';
+                                            $total_hp += $row_hp["credit"];
+                                        }
+                                        echo '</td>';
 
 
-						$result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_npml = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='NPML' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_npml = $result_npml->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_npml = $result_npml->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_npml["sigle"] . ' | UTT : ' . $row_npml["utt"] . ' | '
-							. 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
-							. 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
-							if ($row_npml["resultat"] == 'ADM') {
-								$total_npml++;
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_npml["profil"] . ' | Credit : ' . $row_npml["credit"] . ' | '
+                                            . 'Resultat : ' . $row_npml["resultat"] . '<br><br>';
+                                            if ($row_npml["resultat"] == 'ADM') {
+                                                $total_npml++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						$result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
+                                        $result_se = $conn->query("SELECT  *  FROM ele_formation WHERE s_label='$semestre'
 							AND categorie='SE' AND (affectation='FCBR' or affectation='BR')
 							AND cursus_label='$cursus_label';");
-						echo '<td>';
-						while ($row_se = $result_se->fetch_assoc()) {
-							echo '                            
+                                        echo '<td>';
+                                        while ($row_se = $result_se->fetch_assoc()) {
+                                            echo '                            
 							sigle : ' . $row_se["sigle"] . ' | UTT : ' . $row_se["utt"] . ' | '
-							. 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
-							. 'Resultat : ' . $row_se["resultat"] . '<br><br>';
-							if ($row_se["resultat"] == 'ADM') {
-								$total_se++;
-							}
-						}
-						echo '</td>';
+                                            . 'Profil : ' . $row_se["profil"] . ' | Credit : ' . $row_se["credit"] . ' | '
+                                            . 'Resultat : ' . $row_se["resultat"] . '<br><br>';
+                                            if ($row_se["resultat"] == 'ADM') {
+                                                $total_se++;
+                                            }
+                                        }
+                                        echo '</td>';
 
 
-						echo '</tr>';
-					}
-				} else {
-					echo "0 results";
-				}
-				$total_cs_tm_FCBR = $total_cs + $total_tm;
-				$total_cs_tm_FCBR_utt = $total_cs_utt + $total_tm_utt;
-				$total_FCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
-				echo '
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                $total_cs_tm_FCBR = $total_cs + $total_tm;
+                                $total_cs_tm_FCBR_utt = $total_cs_utt + $total_tm_utt;
+                                $total_FCBR = $total_cs + $total_tm + $total_st + $total_ec + $total_me + $total_ct;
+                                echo '
 						<tr>
 						<td>Total FCBR</td>
 						<td id="total_cs_FCBR">' . $total_cs . '</td>
@@ -1176,20 +1176,20 @@
 						<td id="total_FCBR">' . $total_FCBR . '</td>
 						</tr>
 						';
-			}
-		}
-		echo '        
+                            }
+                        }
+                        echo '        
 		</tbody>
 		</table>
 		';
-		?>
-				</div>
-				
-			</div>
-			
-			<div class="col-sm-1 sidenav" style="background-color:MediumTurquoise;">
-			</div>
-		  </div>
-		</div>
+                        ?>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-1 sidenav" style="background-color:MediumTurquoise;">
+                </div>
+            </div>
+        </div>
     </body>
 </html>
