@@ -38,7 +38,7 @@
                     var total_cs_tm_TCBR = (document.getElementById('total_cs_tm_TCBR').innerHTML);
                     var seuil_cs_tm_TCBR = 54;
                     if (total_cs_tm_TCBR < seuil_cs_tm_TCBR) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Tronc Commun de Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Tronc Commun de Branche\n\n";
                         return false;
                     }
                 }
@@ -47,7 +47,7 @@
                     var total_cs_tm_FCBR = document.getElementById("total_cs_tm_FCBR").innerHTML;
                     var seuil_cs_tm_FCBR = 30;
                     if (total_cs_tm_FCBR < seuil_cs_tm_FCBR) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Filiere\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Filiere\n\n";
                         return false;
                     }
                 }
@@ -58,7 +58,7 @@
                     var total_cs_BR = total_cs_TCBR + total_cs_FCBR;
                     var seuil_cs_BR = 30;
                     if (total_cs_BR < seuil_cs_BR) {
-                        alert += "Vous n'avez pas assez de credits CS pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -69,7 +69,7 @@
                     var total_tm_BR = total_cs_TCBR + total_cs_FCBR;
                     var seuil_tm_BR = 30;
                     if (total_tm_BR < seuil_tm_BR) {
-                        alert += "Vous n'avez pas assez de credits TM pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits TM pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -78,7 +78,7 @@
                     var total_st_TCBR = document.getElementById("total_st_TCBR").innerHTML;
                     var seuil_st_TCBR = 30;
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n";
+                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
                         return false;
                     }
                 }
@@ -87,7 +87,7 @@
                     var total_st_FCBR = document.getElementById("total_st_FCBR").innerHTML;
                     var seuil_st_FCBR = 30;
                     if (total_st_FCBR < seuil_st_FCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n";
+                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n\n";
                         return false;
                     }
                 }
@@ -98,7 +98,7 @@
                     var total_ec_BR = total_ec_TCBR + total_ec_FCBR;
                     var seuil_ec_BR = 12;
                     if (total_ec_BR < seuil_ec_BR) {
-                        alert += "Vous n'avez pas assez de credits EC pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits EC pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -109,7 +109,7 @@
                     var total_me_BR = total_me_TCBR + total_me_FCBR;
                     var seuil_me_BR = 4;
                     if (total_me_BR < seuil_me_BR) {
-                        alert += "Vous n'avez pas assez de credits ME pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits ME pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -121,7 +121,7 @@
                     var total_ct_BR = total_ct_TCBR + total_ct_FCBR;
                     var seuil_ct_BR = 4;
                     if (total_ct_BR < seuil_ct_BR) {
-                        alert += "Vous n'avez pas assez de credits CT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CT pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -134,7 +134,7 @@
                     //window.alert(total_me_ct_BR);        
                     var seuil_me_ct_BR = 16;
                     if (total_me_ct_BR < seuil_me_ct_BR) {
-                        alert += "Vous n'avez pas assez de credits ME ou CT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits ME ou CT pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -145,7 +145,7 @@
                     //window.alert(total_cs_tm_BR_utt);                       
                     var seuil_cs_tm_BR_utt = 60;
                     if (total_cs_tm_BR_utt < seuil_cs_tm_BR_utt) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM à l'UTT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM à l'UTT pour valider votre Branche\n\n";
                         return false;
                     }
                 }
@@ -156,7 +156,7 @@
                             + parseInt(document.getElementById("total_se_FCBR").innerHTML, 10);
                     //window.alert(total_se);
                     if (total_se === 0) {
-                        alert += "Vous n'avez pas passé le SE\n";
+                        alert += "Vous n'avez pas passé le SE\n\n";
                         return false;
                     }
                 }
@@ -167,7 +167,7 @@
                             + parseInt(document.getElementById("total_npml_FCBR").innerHTML, 10);
                     //window.alert(total_npml);                    
                     if (total_npml === 0) {
-                        alert += "Vous n'avez pas passé le NPML\n";
+                        alert += "Vous n'avez pas passé le NPML\n\n";
                         return false;
                     }
                 }
@@ -179,7 +179,7 @@
                     //window.alert(total);                                                            
                     var seuil = 180;
                     if (total < seuil) {
-                        alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n";
+                        alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n\n";
                         return false;
                     }
                 }
@@ -271,91 +271,91 @@
 
                 function R01() {
                     if (total_cs_tm_TCBR < seuil_cs_tm_TCBR) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Tronc Commun de Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Tronc Commun de Branche\n\n";
                     }
                 }
 
                 function R02() {
                     if (total_cs_tm_FCBR < seuil_cs_tm_FCBR) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Filiere\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM pour valider votre Filiere\n\n";
                     }
                 }
 
                 function R03() {
                     if (total_cs_BR < seuil_cs_BR) {
-                        alert += "Vous n'avez pas assez de credits CS pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS pour valider votre Branche\n\n";
                     }
                 }
 
                 function R04() {
                     if (total_tm_BR < seuil_tm_BR) {
-                        alert += "Vous n'avez pas assez de credits TM pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits TM pour valider votre Branche\n\n";
                     }
                 }
 
                 function R05() {
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n";
+                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
                     }
                 }
 
                 function R06() {
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n";
+                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
                     }
                 }
 
                 function R07() {
                     if (total_st_FCBR < seuil_st_FCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n";
+                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n\n";
                     }
                 }
 
                 function R08() {
                     if (total_ec_BR < seuil_ec_BR) {
-                        alert += "Vous n'avez pas assez de credits EC pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits EC pour valider votre Branche\n\n";
                     }
                 }
 
                 function R09() {
                     if (total_me_BR < seuil_me_BR) {
-                        alert += "Vous n'avez pas assez de credits ME pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits ME pour valider votre Branche\n\n";
                     }
                 }
 
                 function R10() {
                     if (total_ct_BR < seuil_ct_BR) {
-                        alert += "Vous n'avez pas assez de credits CT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CT pour valider votre Branche\n\n";
                     }
                 }
 
                 function R11() {
                     if (total_me_ct_BR < seuil_me_ct_BR) {
-                        alert += "Vous n'avez pas assez de credits ME ou CT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits ME ou CT pour valider votre Branche\n\n";
                     }
                 }
 
                 function R12() {
                     if (total_cs_tm_BR_utt < seuil_cs_tm_BR_utt) {
-                        alert += "Vous n'avez pas assez de credits CS ou TM à l'UTT pour valider votre Branche\n";
+                        alert += "Vous n'avez pas assez de credits CS ou TM à l'UTT pour valider votre Branche\n\n";
                     }
                 }
 
                 function R13() {
                     if (total_se === 0) {
-                        alert += "Vous n'avez pas passé le SE\n";
+                        alert += "Vous n'avez pas passé le SE\n\n";
                     }
                 }
 
                 function R14() {
                     if (total_npml === 0) {
-                        alert += "Vous n'avez pas passé le NPML\n";
+                        alert += "Vous n'avez pas passé le NPML\n\n";
                     }
                 }
 
                 function R15() {
                     if (total < seuil) {
-                        alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n";
+                        alert += "Vous n'avez pas assez de credits pour obtenir le diplôme de l'UTT\n\n";
                     }
                 }
             }
