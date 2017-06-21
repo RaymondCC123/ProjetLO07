@@ -4,13 +4,80 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>import_action</title>
-    </head>
-    <body>
+<html >
+	<head>
+		  <title>import</title>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <style>
+			/* Remove the navbar's default margin-bottom and rounded borders */ 
+			.navbar {
+			  margin-bottom: 0;
+			  border-radius: 0;
+			}
+			
+			/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+			.row.content {height: 3000px}
+			
+			/* Set gray background color and 100% height */
+			.sidenav {
+			  padding-top: 20px;
+			  background-color: #f1f1f1;
+			  height: 100%;
+			}
+			
+			/* Set black background color, white text and some padding */
+			footer {
+			  background-color: #555;
+			  color: white;
+			  padding: 15px;
+			}
+			
+			/* On small screens, set height to 'auto' for sidenav and grid */
+			@media screen and (max-width: 767px) {
+			  .sidenav {
+				height: auto;
+				padding: 15px;
+			  }
+			  .row.content {height:auto;} 
+			}
+		  </style>
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-inverse" style="background-color:Black;">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <img border="0" src="logo-utt.jpg" width="120" height="60">
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a href="#">Liste des cursus</a></li>
+			<li><a href="form_etu.html">Nouveau profil</a></li>
+			<li><a href="#">Règlement des études</a></li>
+		   </ul>
+		</div>
+	  </div>
+	</nav>
+  
+	<div class="container-fluid text-center">    
+		<div class="row content">
+			<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
+			</div>
+	
+			<div class="col-sm-8 text-left"> 
+			 <div class="text-left"> 
+				<h1>Import</h1>
+				<hr>
+			  </div>
         <?php
         $csv = $_FILES['csv'];
         $csv = file_get_contents($csv['tmp_name']);
@@ -202,6 +269,14 @@ error_reporting(E_ALL);
 
          */
         ?>
+</div>
+	
+	<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
+    </div>
+  </div>
+</div>
+
+
 
     </body>
 </html>
