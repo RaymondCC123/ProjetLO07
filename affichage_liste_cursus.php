@@ -28,7 +28,7 @@
                 R13();
                 R14();
                 if (alert === "") {
-                    window.alert("Felicitations ! Vous pouvez obtenir votre diplome de l'UTT maintenant !");
+                    window.alert("Félicitations ! Vous avez validé tous vos crédits. Vous pouvez obtenir votre diplome d'ingénieur de l'UTT maintenant !");
                 } else {
                     window.alert(alert);
                 }
@@ -78,7 +78,7 @@
                     var total_st_TCBR = document.getElementById("total_st_TCBR").innerHTML;
                     var seuil_st_TCBR = 30;
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
+                        alert += "Vous n'avez pas encore fait le stage pour valider votre Tronc Commun de Branche\n\n";
                         return false;
                     }
                 }
@@ -87,7 +87,7 @@
                     var total_st_FCBR = document.getElementById("total_st_FCBR").innerHTML;
                     var seuil_st_FCBR = 30;
                     if (total_st_FCBR < seuil_st_FCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n\n";
+                        alert += "Vous n'avez pas encore fait le stage pour valider votre Filiere\n\n";
                         return false;
                     }
                 }
@@ -264,7 +264,7 @@
                 R14();
                 R15();
                 if (alert === "") {
-                    window.alert("Felicitations ! Vous pouvez obtenir votre diplome de l'UTT maintenant !");
+                    window.alert("Felicitations ! Vous pouvez obtenir votre diplome d'ingénieur de l'UTT maintenant !");
                 } else {
                     window.alert(alert);
                 }
@@ -295,19 +295,19 @@
 
                 function R05() {
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
+                        alert += "Vous n'avez pas encore fait le stage pour valider votre Tronc Commun de Branche\n\n";
                     }
                 }
 
                 function R06() {
                     if (total_st_TCBR < seuil_st_TCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Tronc Commun de Branche\n\n";
+                        alert += "Vous n'avez pas encore fait le stage pour valider votre Tronc Commun de Branche\n\n";
                     }
                 }
 
                 function R07() {
                     if (total_st_FCBR < seuil_st_FCBR) {
-                        alert += "Vous n'avez pas encore faites le stage pour valider votre Filiere\n\n";
+                        alert += "Vous n'avez pas encore fait le stage pour valider votre Filiere\n\n";
                     }
                 }
 
@@ -400,25 +400,26 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                    <img border="0" src="logo-utt.jpg" width="120" height="60">
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Liste des cursus</a></li>
-                        <li><a href="form_etu.html">Nouveau profil</a></li>
-                        <li><a href="#">Règlement des études</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-inverse" style="background-color:Black;">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <a href="accueil.html"><img border="0" src="logo-utt.jpg" width="120" height="60"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a href="affichage_liste_cursus_index.html">Liste des cursus</a></li>
+			<li><a href="form_etu.html">Nouveau profil</a></li>
+			<li><a href="nouveau_cursus_choix.html">Nouveau cursus</a></li>
+			<li><a href="form_export.html">Exporter</a></li>
+		   </ul>
+		</div>
+	  </div>
+	</nav>
 
 
         <div class="container-fluid text-center">    
@@ -428,7 +429,7 @@
 
                 <div class="col-sm-10 text-left"> 
                     <div class="text-left"> 
-                        <h1>Votre cursus en tronc commun</h1>
+                        <h1>Vos cursus</h1>
                         <hr>
                     </div>
 
@@ -452,7 +453,7 @@
                         <?php
                         $id_Etu = $_POST["text_idETU1"];
                         echo 'Etudiant : ' . $id_Etu . '<br>';
-                        echo 'Les suivants sont tous votre cursus<br>';
+                        echo 'Vos cursus sont les suivants :<br>';
                         echo '-----------------------------------------------------------------------------<br>';
                         $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
                         if ($result_etu_cursus->num_rows > 0) {
@@ -673,10 +674,7 @@
                     </div>
 
 
-                    <div class="text-left"> 
-                        <h1>Votre cursus en tronc commun de branche</h1>
-                        <hr>
-                    </div>
+                  
 
 
                     <?php
@@ -699,7 +697,7 @@
                         <?php
                         //$id_Etu = $_POST["etu1"];
                         echo 'Etudiant : ' . $id_Etu . '<br>';
-                        echo 'Les suivants sont tous votre cursus<br>';
+                        echo 'Vos cursus sont les suivants<br>';
                         echo '-----------------------------------------------------------------------------<br>';
                         $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
                         if ($result_etu_cursus->num_rows > 0) {
@@ -931,10 +929,7 @@
                         ?>
                     </div>
 
-                    <div class="text-left"> 
-                        <h1>Votre cursus en filière de branche</h1>
-                        <hr>
-                    </div>
+                    
                     <?php
                     // connect to the base donnees
                     $databasehost = "localhost";
@@ -955,8 +950,8 @@
                         <?php
                         //$id_Etu = $_POST["etu2"];
                         echo 'Etudiant : ' . $id_Etu . '<br>';
-                        echo 'Les suivants sont tous votre cursus<br>';
-                        echo '-----------------------------------------------------------------------------<br>';
+                        echo 'Vos cursus sont les suivants :<br>';
+                        echo '-----------------------------------------------------------------------------<br>'; 
                         $result_etu_cursus = $conn->query("SELECT  *  FROM cursus where etu='$id_Etu';");
                         if ($result_etu_cursus->num_rows > 0) {
                             // output data of each row

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
-        <title>export cursus</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>accueil</title>
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
 		<style>
 	/* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -21,7 +19,7 @@ and open the template in the editor.
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height:800px}
     
-    /* Set gray background color and 100% height */
+    /* Set background color and 100% height */
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
@@ -67,36 +65,43 @@ and open the template in the editor.
 		</div>
 	  </div>
 	</nav>
+  
+	<div class="container-fluid text-center">    
+		<div class="row content">
+		<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
+	</div>
 
-		<div class="container-fluid text-center">    
-		  <div class="row content">
-			<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise";>
-			</div>
-			
-			<div class="col-sm-8 text-left"> 
-				<div class="text-left"> 
-					<h1>Exporter le cursus</h1>
-					<hr>
-				</div>
-				<h3 class="text-center">Veuiller choisir l'etudiant(e) dont vous voulez exporter le cursus : </h3> <br/>
-				<form method="get" action="action_export.php" > 
-					<div>
-						<div class="input-group col-md-6 col-md-offset-3" > 
-							<span class="input-group-addon">N°étu</span>
-							<input type="text" name="id_etu" class="form-control" >
-						</div>
-					</div><br/>
-					<input name="submit" type="submit" value="Rechercher" class="btn btn-info col-md-2 col-md-offset-6"/>
-				</form>
-			</div>
-			
-			
-			<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
-			</div>
-		  </div>
-		</div>
+     
+    <div class="col-sm-8 text-left" > 
+		<br/><br/><br/>
+		
+       
 
+      <div class="jumbotron " style="background-color:MediumAquaMarine;">
+        <h1 class="display-3 text-center">Bienvenue sur le site de gestion des cursus</h1> <br/><br/> <br/>
+        <ul class="lead">
+			<li>Créez un profil étudiant</li>
+			<li>Importez ou décrivez un nouveau cursus</li>
+			<li>Exportez vos cursus</li>
+			<li>Visualisez et comparez vos cursus au règlement des études de l'UTT</li>
+		</ul>
+			<br/><br/> <br/>
+      </div>
 
+      
 
-</body>
+     
+
+    
+	</div>
+	
+	<div class="col-sm-2 sidenav" style="background-color:MediumTurquoise;">
+    </div>
+</div>
+</div>
+    </body>
 </html>
+
+
+
+navbar lien ajouter cursus

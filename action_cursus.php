@@ -51,25 +51,26 @@ and open the template in the editor.
     </head>
     <body>
 
-        <nav class="navbar navbar-inverse" style="background-color:Black;">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-                    <img border="0" src="logo-utt.jpg" width="120" height="60">
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Liste des cursus</a></li>
-                        <li><a href="form_etu.html">Nouveau profil</a></li>
-                        <li><a href="#">Règlement des études</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-inverse" style="background-color:Black;">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <a href="accueil.html"><img border="0" src="logo-utt.jpg" width="120" height="60"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a href="affichage_liste_cursus_index.html">Liste des cursus</a></li>
+			<li><a href="form_etu.html">Nouveau profil</a></li>
+			<li><a href="nouveau_cursus_choix.html">Nouveau cursus</a></li>
+			<li><a href="form_export.html">Exporter</a></li>
+		   </ul>
+		</div>
+	  </div>
+	</nav>
 
         <div class="container-fluid text-center">    
             <div class="row content">
