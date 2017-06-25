@@ -372,11 +372,11 @@
             .row.content {height: 3000px}
 
             /* Set gray background color and 100% height */
-            .sidenav {
+/*            .sidenav {
                 padding-top: 20px;
                 background-color: #f1f1f1;
                 height: 100%;
-            }
+            }*/
 
             /* Set black background color, white text and some padding */
             footer {
